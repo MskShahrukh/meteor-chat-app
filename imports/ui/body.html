@@ -1,0 +1,57 @@
+<body>
+  <div class="container">
+    {{> loginButtons}}
+    {{#if currentUser}}
+      <header>
+        <h1>Simple Chat App</h1>
+        <!--
+        <h1>Todo List ({{incompleteCount}})</h1>
+        <label class="hide-completed">
+          <input type="checkbox" />
+          Hide Completed Tasks
+        </label>
+        -->
+        
+
+        <form class="new-task">
+          <input type="text" name="text" placeholder="Type to post a message" />
+        </form>
+    </header>
+
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+
+    {{else}}
+    <div class="LoginPage">
+      <p>Please log in to use the chat App</p>
+    </div>
+
+    {{/if}}
+</div>
+</body>
+
+
+<template name="task">
+   <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
+    {{#if isOwner}}
+    <!--
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+  -->
+    <button class="delete">&times;</button>
+    <button class="toggle-private">
+      {{#if private}}
+        un-highlight
+      {{else}}
+        HighLight
+      {{/if}}
+    </button>
+    <span class="text"> <strong class="currentUser">{{username}}</strong> - {{text}}</span>
+
+      {{else}}
+      <span class="text"> <strong>{{username}}</strong> - {{text}}</span>
+    {{/if}}
+  </li>
+</template>
