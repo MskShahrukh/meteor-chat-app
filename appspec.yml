@@ -5,8 +5,9 @@ files:
     destination: /home/ubuntu/meteor-chat-app
 hooks:
   AfterInstall:
-   - location : scripts/npm-install.sh
-     timeout : 360
-   - location: scripts/meteor-run.sh
-     timeout : 360 
- 
+    - location : scripts/npm-install.sh
+      timeout : 360
+      runas: ubuntu
+    - location: scripts/meteor-run.sh
+      timeout : 360 
+      runas: ubuntu
