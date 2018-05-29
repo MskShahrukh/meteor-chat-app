@@ -2,10 +2,11 @@ version: 0.0
 os: linux
 files:
   - source: /
-  destination: ~/meteor-chat-app
+    destination: ~/meteor-chat-app
 hooks:
   AfterInstall:
    - location : scripts/npm-install.sh
-   - location: scrits/meteor-run.sh
-  
+     timeout : 360
+   - location: scripts/meteor-run.sh
+     timeout : 360 
  
