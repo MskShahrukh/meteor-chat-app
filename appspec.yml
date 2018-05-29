@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: ~/meteor-chat-app
+    destination: /home/ubuntu/meteor-chat-app
 hooks:
   AfterInstall:
    - location : scripts/npm-install.sh
