@@ -14,7 +14,7 @@ hooks:
   AfterInstall:
     - location : scripts/npm-install.sh
       timeout : 360
-      runas: ubuntu
+      runas: root
     - location: scripts/meteor-run.sh
       timeout : 360 
-      runas: ubuntu
+      runas: root
